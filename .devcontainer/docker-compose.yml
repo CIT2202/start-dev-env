@@ -18,6 +18,8 @@ services:
     restart: unless-stopped
     volumes:
       - mariadb-data:/var/lib/mysql
+    ports:
+      - "8081:8080" # <-- ADD THIS LINE here to expose Adminer on port 8081
     environment:
       MARIADB_ROOT_PASSWORD: secret
       MARIADB_DATABASE: webdev
