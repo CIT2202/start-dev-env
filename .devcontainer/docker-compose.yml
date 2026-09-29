@@ -32,6 +32,7 @@ services:
     # Same trick as the app container: share db's network so MariaDB is
     # at 127.0.0.1:3306 and Adminer's port 8080 is forwarded with the rest
     network_mode: service:db
+    command: php -S 0.0.0.0:8081 -t /var/www/html
     environment:
       ADMINER_DEFAULT_SERVER: 127.0.0.1
 
